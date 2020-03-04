@@ -25,8 +25,8 @@ if __name__ == "__main__":
     api = tweepy.API(auth, wait_on_rate_limit=True)
 
     # update these for whatever tweet you want to process replies to
-    name = 'elonmusk'
-    tweet_id = '1231330415639552001'
+    name = 'neiltyson'
+    tweet_id = '1234269251332190208'
 
     replies=[]
     for tweet in tweepy.Cursor(api.search,q='to:'+name, since_id=tweet_id, tweet_mode='extended', timeout=1805).items(10000):
@@ -38,7 +38,7 @@ if __name__ == "__main__":
     # sorted_retweets = sorted(replies, key = lambda x: x[1], reverse=True)
     sorted_favorites = sorted(replies, key = lambda x: x[2], reverse=True)
 
-    f = open('replies_elon_musk2.csv','w')
+    f = open('twitterthreads/replies_neil_tyson.csv','w')
     csv_out=csv.writer(f)
     for row in sorted_favorites:
         csv_out.writerow(row)

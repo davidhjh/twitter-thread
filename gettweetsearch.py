@@ -25,7 +25,7 @@ if __name__ == "__main__":
     api = tweepy.API(auth, wait_on_rate_limit=True)
 
     # change this value to search for different keyword(s)
-    keyword = "Quantum Computing"
+    keyword = "cloud Computing"
     replies = tweetBySearch(api, keyword)
 
     # sorted_retweets = sorted(replies, key = lambda x: x[1], reverse=True)
