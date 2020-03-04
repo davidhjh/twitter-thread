@@ -25,13 +25,13 @@ if __name__ == "__main__":
     api = tweepy.API(auth, wait_on_rate_limit=True)
 
     # change this value to search for different keyword(s)
-    keyword = "Artificial Intelligence"
+    keyword = "Quantum Computing"
     replies = tweetBySearch(api, keyword)
 
     # sorted_retweets = sorted(replies, key = lambda x: x[1], reverse=True)
     sorted_favorites = sorted(replies, key = lambda x: x[2], reverse=True)
 
-    f = open('tweetsearch.csv','w')
+    f = open('tweetsearches/tweetsearch.csv','w')
     csv_out=csv.writer(f)
     for row in sorted_favorites:
         csv_out.writerow(row)
